@@ -1,0 +1,5 @@
+CREATE TABLE migration_table (
+   ID BIGINT,
+   NNM_ BIGINT,
+   NMR_ DOUBLE PRECISION
+)

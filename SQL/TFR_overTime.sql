@@ -1,0 +1,6 @@
+CREATE TABLE TFR_overTime (
+   Location VARCHAR(64),
+   Year BIGINT,
+   Rural_TFR DOUBLE PRECISION,
+   Urban_TFR DOUBLE PRECISION
+)

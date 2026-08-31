@@ -1,0 +1,5 @@
+CREATE TABLE TFR_India_states (
+   Location VARCHAR(64),
+   Year BIGINT,
+   TFR DOUBLE PRECISION
+)

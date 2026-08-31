@@ -1,0 +1,252 @@
+{
+    "Base_data": {
+        "Variant": {
+            "name": "VARIANT_",
+            "unit": "Variant"
+        },
+        "Region, subregion, country or area *": {
+            "name": "RSC_",
+            "unit": "Region, subregion, country or area *"
+        },
+        "Location code": {
+            "name": "LC_",
+            "unit": "Location code"
+        },
+        "ISO3 Alpha-code": {
+            "name": "IAC_3",
+            "unit": "ISO3 Alpha-code"
+        },
+        "Type": {
+            "name": "TYPE_",
+            "unit": "Type"
+        },
+        "Year": {
+            "name": "YEAR_",
+            "unit": "Year"
+        }
+    },
+    "Population_data": {
+        "Total Population, as of 1 January (thousands)": {
+            "name": "TP1_JAN",
+            "unit": "thousands"
+        },
+        "Total Population, as of 1 July (thousands)": {
+            "name": "TP1_JULY",
+            "unit": "thousands"
+        },
+        "Male Population, as of 1 July (thousands)": {
+            "name": "MP1_",
+            "unit": "thousands"
+        },
+        "Female Population, as of 1 July (thousands)": {
+            "name": "FP1_",
+            "unit": "thousands"
+        },
+        "Population Density, as of 1 July (persons per square km)": {
+            "name": "PD1_",
+            "unit": "persons per square km"
+        },
+        "Population Sex Ratio, as of 1 July (males per 100 females)": {
+            "name": "PSR_",
+            "unit": "males per 100 females"
+        },
+        "Median Age, as of 1 July (years)": {
+            "name": "MA1_",
+            "unit": "years"
+        },
+        "Natural Change, Births minus Deaths (thousands)": {
+            "name": "NCB_",
+            "unit": "thousands"
+        },
+        "Rate of Natural Change (per 1,000 population)": {
+            "name": "RNC_",
+            "unit": "per 1,000 population"
+        },
+        "Population Change (thousands)": {
+            "name": "PC_",
+            "unit": "thousands"
+        },
+        "Population Growth Rate (percentage)": {
+            "name": "PGR_",
+            "unit": "percentage"
+        },
+        "Population Annual Doubling Time (years)": {
+            "name": "PAD_",
+            "unit": "years"
+        }
+    },
+    "Fertility_data": {
+        "Births (thousands)": {
+            "name": "BIRTHS_",
+            "unit": "thousands"
+        },
+        "Births by women aged 15 to 19 (thousands)": {
+            "name": "BWA_15_19",
+            "unit": "thousands"
+        },
+        "Crude Birth Rate (births per 1,000 population)": {
+            "name": "CBR_",
+            "unit": "births per 1,000 population"
+        },
+        "Total Fertility Rate (live births per woman)": {
+            "name": "TFR_",
+            "unit": "live births per woman"
+        },
+        "Net Reproduction Rate (surviving daughters per woman)": {
+            "name": "NRR_",
+            "unit": "surviving daughters per woman"
+        },
+        "Mean Age Childbearing (years)": {
+            "name": "MAC_",
+            "unit": "years"
+        },
+        "Sex Ratio at Birth (males per 100 female births)": {
+            "name": "SRB_",
+            "unit": "males per 100 female births"
+        }
+    },
+    "Mortality_data": {
+        "Total Deaths (thousands)": {
+            "name": "TD_",
+            "unit": "thousands"
+        },
+        "Male Deaths (thousands)": {
+            "name": "MD_",
+            "unit": "thousands"
+        },
+        "Female Deaths (thousands)": {
+            "name": "FD_",
+            "unit": "thousands"
+        },
+        "Crude Death Rate (deaths per 1,000 population)": {
+            "name": "CDR_",
+            "unit": "deaths per 1,000 population"
+        },
+        "Life Expectancy at Birth, both sexes (years)": {
+            "name": "LEB_",
+            "unit": "years"
+        },
+        "Male Life Expectancy at Birth (years)": {
+            "name": "MLE_",
+            "unit": "years"
+        },
+        "Female Life Expectancy at Birth (years)": {
+            "name": "FLE_",
+            "unit": "years"
+        },
+        "Life Expectancy at Age 15, both sexes (years)": {
+            "name": "LEA_15",
+            "unit": "years"
+        },
+        "Male Life Expectancy at Age 15 (years)": {
+            "name": "MLE_15",
+            "unit": "years"
+        },
+        "Female Life Expectancy at Age 15 (years)": {
+            "name": "FLE_15",
+            "unit": "years"
+        },
+        "Life Expectancy at Age 65, both sexes (years)": {
+            "name": "LEA_65",
+            "unit": "years"
+        },
+        "Male Life Expectancy at Age 65 (years)": {
+            "name": "MLE_65",
+            "unit": "years"
+        },
+        "Female Life Expectancy at Age 65 (years)": {
+            "name": "FLE_65",
+            "unit": "years"
+        },
+        "Life Expectancy at Age 80, both sexes (years)": {
+            "name": "LEA_80",
+            "unit": "years"
+        },
+        "Male Life Expectancy at Age 80 (years)": {
+            "name": "MLE_80",
+            "unit": "years"
+        },
+        "Female Life Expectancy at Age 80 (years)": {
+            "name": "FLE_80",
+            "unit": "years"
+        },
+        "Infant Deaths, under age 1 (thousands)": {
+            "name": "IDA_",
+            "unit": "thousands"
+        },
+        "Infant Mortality Rate (infant deaths per 1,000 live births)": {
+            "name": "IMR_",
+            "unit": "infant deaths per 1,000 live births"
+        },
+        "Live Births Surviving to Age 1 (thousands)": {
+            "name": "LBS_",
+            "unit": "thousands"
+        },
+        "Under-Five Deaths, under age 5 (thousands)": {
+            "name": "FDA_5",
+            "unit": "thousands"
+        },
+        "Under-Five Mortality (deaths under age 5 per 1,000 live births)": {
+            "name": "FM_5",
+            "unit": "deaths under age 5 per 1,000 live births"
+        },
+        "Mortality before Age 40, both sexes (deaths under age 40 per 1,000 live births)": {
+            "name": "MA4_40",
+            "unit": "deaths under age 40 per 1,000 live births"
+        },
+        "Male Mortality before Age 40 (deaths under age 40 per 1,000 male live births)": {
+            "name": "MMA_40",
+            "unit": "deaths under age 40 per 1,000 male live births"
+        },
+        "Female Mortality before Age 40 (deaths under age 40 per 1,000 female live births)": {
+            "name": "FMA_40",
+            "unit": "deaths under age 40 per 1,000 female live births"
+        },
+        "Mortality before Age 60, both sexes (deaths under age 60 per 1,000 live births)": {
+            "name": "MA6_60",
+            "unit": "deaths under age 60 per 1,000 live births"
+        },
+        "Male Mortality before Age 60 (deaths under age 60 per 1,000 male live births)": {
+            "name": "MMA_60",
+            "unit": "deaths under age 60 per 1,000 male live births"
+        },
+        "Female Mortality before Age 60 (deaths under age 60 per 1,000 female live births)": {
+            "name": "FMA_60",
+            "unit": "deaths under age 60 per 1,000 female live births"
+        },
+        "Mortality between Age 15 and 50, both sexes (deaths under age 50 per 1,000 alive at age 15)": {
+            "name": "MA1_15_50",
+            "unit": "deaths under age 50 per 1,000 alive at age 15"
+        },
+        "Male Mortality between Age 15 and 50 (deaths under age 50 per 1,000 males alive at age 15)": {
+            "name": "MMA_15_50",
+            "unit": "deaths under age 50 per 1,000 males alive at age 15"
+        },
+        "Female Mortality between Age 15 and 50 (deaths under age 50 per 1,000 females alive at age 15)": {
+            "name": "FMA_15_50",
+            "unit": "deaths under age 50 per 1,000 females alive at age 15"
+        },
+        "Mortality between Age 15 and 60, both sexes (deaths under age 60 per 1,000 alive at age 15)": {
+            "name": "MA1_15_60",
+            "unit": "deaths under age 60 per 1,000 alive at age 15"
+        },
+        "Male Mortality between Age 15 and 60 (deaths under age 60 per 1,000 males alive at age 15)": {
+            "name": "MMA_15_60",
+            "unit": "deaths under age 60 per 1,000 males alive at age 15"
+        },
+        "Female Mortality between Age 15 and 60 (deaths under age 60 per 1,000 females alive at age 15)": {
+            "name": "FMA_15_60",
+            "unit": "deaths under age 60 per 1,000 females alive at age 15"
+        }
+    },
+    "Migration_data": {
+        "Net Number of Migrants (thousands)": {
+            "name": "NNM_",
+            "unit": "thousands"
+        },
+        "Net Migration Rate (per 1,000 population)": {
+            "name": "NMR_",
+            "unit": "per 1,000 population"
+        }
+    }
+}
