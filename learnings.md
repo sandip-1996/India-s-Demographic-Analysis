@@ -1,6 +1,6 @@
-DEMOGRAPHIC ANALYSIS – 
-NEW PYTHON LEARNING – 
-1. 	FOR REMOVING ROW –
+# DEMOGRAPHIC ANALYSIS – 
+## NEW PYTHON LEARNING – 
+1. 	**FOR REMOVING ROW –**
 	DATA.COLUMNS = DATA.ILOC[15]; 				                                                                
         DATA = DATA.ILOC[16:].RESET_INDEX(DROP=TRUE)
 
