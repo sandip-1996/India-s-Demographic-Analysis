@@ -221,39 +221,45 @@ SQL LEARNING POSTGRE
                         FORMAT(CurrentValue, "#,##0") here "#,##0" is thousand seperator
         )
 ```
-3.      POWERBI CONCEPT: 
-        FORMAT() -> RETURN TEXT NOT NUMBER; CONVERTS STRINGS FOR DISPLAY PURPOSES. 
-                EX - FORMAT((COL1 + COL2)/2,"0.00")
-
-        DIVIDE(COL1 + COL2, 2, 0) -> HANDLES DIVISION BY ZERO
-
-        MEASURE: USES CPU PROCESSING AND COMPUTED ON THE FLY WHEN WE INTERACT WITH REPORT
-                RETURN A SINGLE AGGRIGATED VALUE
-                USED IN KPI, METRICS, RATIOS, PERCENTAGE, COMPARISIONS
-                CHANGE WITH FILTER
-
-
-        CALCULATED COLUMN: USES RAM STORAGE AND ARE COMPUTED WHEN DATA LOADS. 
-                RETURN ROW LEVEL CALCULATION, FILTERING, RELATIONSHIPS
-                ADDS NEW COLUMN INTO TABLE
-                DOESNOT CHANGE WITH FILTER
-
-4.      > ADD COLUMN USING POWER QUERIES:
-        TRANSFORM DATA > ADD COLUMN > TABLE_NAME = Text.From(Number.IntegerDivide([year_],10)*10) & "_" & Text.From((Number.IntegerDivide([year_],10)*10)+10) > ok apply. 
-
-        Number.IntergerDivide(col, divisor)
-        ---------------------
-        > SAME TASK USING DAX 
-        NEW COLUMN > TABLE_NAME = 
-                VAR STARTDECADE FLOOR('Mortality_data[Year_],10)
-                RETURN 
-                        STARTDECADE & "_" & (STARTDECADE +10)
+2. **POWERBI CONCEPT**
+```Text
+FORMAT() -> RETURN TEXT NOT NUMBER; CONVERTS STRINGS FOR DISPLAY PURPOSES. 
+EX - FORMAT((COL1 + COL2)/2,"0.00")
+```
+```text
+DIVIDE(COL1 + COL2, 2, 0) -> HANDLES DIVISION BY ZERO
+```
+```text
+MEASURE: USES CPU PROCESSING AND COMPUTED ON THE FLY WHEN WE INTERACT WITH REPORT
+RETURN A SINGLE AGGRIGATED VALUE
+USED IN KPI, METRICS, RATIOS, PERCENTAGE, COMPARISIONS
+CHANGE WITH FILTER
+```
+```text
+CALCULATED COLUMN: USES RAM STORAGE AND ARE COMPUTED WHEN DATA LOADS. 
+RETURN ROW LEVEL CALCULATION, FILTERING, RELATIONSHIPS
+ADDS NEW COLUMN INTO TABLE
+DOESNOT CHANGE WITH FILTER
+```
+3. **ADD COLUMN USING POWER QUERIES**
+```text
+TRANSFORM DATA > ADD COLUMN > TABLE_NAME = Text.From(Number.IntegerDivide([year_],10)*10) & "_" & Text.From((Number.IntegerDivide([year_],10)*10)+10) > ok apply. 
+```
+```text
+Number.IntergerDivide(col, divisor)
+```
+> - SAME TASK USING DAX
+```text
+NEW COLUMN > TABLE_NAME = 
+	VAR STARTDECADE FLOOR('Mortality_data[Year_],10)
+RETURN 
+	STARTDECADE & "_" & (STARTDECADE +10)
 
         OUTPUT- 
         TABLE_NAME
         1950 - 1960
         1960 - 1970
-        .
+```        
         ---------------------
         > CREATE SEPERATE DAX TABLE
         FIRST CREATE Decade COLUMN ON EXISTING TABLE
