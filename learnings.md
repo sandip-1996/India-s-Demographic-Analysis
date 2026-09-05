@@ -208,7 +208,7 @@ SQL LEARNING POSTGRE
          SUM(COUNT(*)) OVER() OUTPUT WILL BE EVERY ROW, CALCULATE THE SUM BUT DONOT COLLAPES THE ROWS. 
 
 ## POWERBI - 
-1.  **DAX FORMAT FOR CHANGING METRIC SYSTEM FROM MILLION BILLION TO CRORE AND LAKH FORMAT.**
+1. ### **DAX FORMAT FOR CHANGING METRIC SYSTEM FROM MILLION BILLION TO CRORE AND LAKH FORMAT.**
 ```DAX
         Births in Lakhs/Crores =
         VAR CurrentValue = SUM('Table'[Column])
@@ -221,7 +221,7 @@ SQL LEARNING POSTGRE
                         FORMAT(CurrentValue, "#,##0") here "#,##0" is thousand seperator
         )
 ```
-2. **POWERBI CONCEPT**
+2. ### **POWERBI CONCEPT**
 ```Text
 FORMAT() -> RETURN TEXT NOT NUMBER; CONVERTS STRINGS FOR DISPLAY PURPOSES. 
 EX - FORMAT((COL1 + COL2)/2,"0.00")
@@ -241,7 +241,7 @@ RETURN ROW LEVEL CALCULATION, FILTERING, RELATIONSHIPS
 ADDS NEW COLUMN INTO TABLE
 DOESNOT CHANGE WITH FILTER
 ```
-3. **ADD COLUMN USING POWER QUERIES**
+3. ### **ADD COLUMN USING POWER QUERIES**
 ```text
 TRANSFORM DATA > ADD COLUMN > TABLE_NAME = Text.From(Number.IntegerDivide([year_],10)*10) & "_" & Text.From((Number.IntegerDivide([year_],10)*10)+10) > ok apply. 
 ```
@@ -260,43 +260,50 @@ RETURN
         1950 - 1960
         1960 - 1970
 ```        
-        ---------------------
-        > CREATE SEPERATE DAX TABLE
-        FIRST CREATE Decade COLUMN ON EXISTING TABLE
-        Decade_MLE_Summary = 
+---
+> - CREATE SEPERATE DAX TABLE
+```text
+FIRST CREATE Decade COLUMN ON EXISTING TABLE
+Decade_MLE_Summary = 
         ADDCOLUMNS(
         SUMMARIZE(
                 'Mortality_data',
                 'Mortality_data'[Decade]
         ),
-        "Avg_MLE", CALCULATE(AVERAGE('Mortality_data'[MLE_]))
+"Avg_MLE", CALCULATE(AVERAGE('Mortality_data'[MLE_]))
         )
-
-5.      SYNTAX - 
-        SUMMARIZE(
+```
+4. ### **SYNTAX**
+```text
+   SUMMARIZE(
                 <table>,
                 <groupBy_columnName1>,
                 [<groupBy_columnName2>],
                 ...)
-
+```
+```text
         ADDCOLUMNS(
                 <table>,  # caution it will take whole table
                 "<Name1>", <Expression1>,
                 ["<Name2>", <Expression2>],
                 ...)
         )
-
+```
+```text
         SELECTCOLUMNS(
                 table,  # it will draw only seleccted columns return table
                 "column_name", expression,
                 "column_name", expression   
                 )
-        
+```
+```text        
         VALUES( <TableNameOrColumnName> )
                 -> RETURNS COLUMN OR TABLE OF UNIQUE VALUES
-
+```
+```text
         CALCULATE(AVERAGE(...), IF(...))
-
+```
+```text
         SWITCH(
                 <Expression>, # TRUE(   )
                 <Value1>, <Result1>,
@@ -304,20 +311,23 @@ RETURN
                 ...,
                 [<Else>]
                 )
-
+```
+```text
         LOOKUPVALUE(
                 <result_column>,
                 <search_column1>, <search_value1>,
                 [<search_column2>, <search_value2>],
                 ...
                 )
-
+```
+```text
         FILTER(
                 <table>,
                 <condition>
                 )
-        ## FILTER() returns a table, not a single value
-
+- FILTER() returns a table, not a single value
+```
+```text
         IMPORTANT OPERATORS:    
                 &&    -- AND
                 ||    -- OR
@@ -327,7 +337,8 @@ RETURN
                 <     -- less than
                 >=    -- greater/equal
                 <=    -- less/equal
-
+```
+```text
         DATATABLE(
                 "ColumnName", DataType,
                 {
@@ -336,27 +347,29 @@ RETURN
                         {value3}
                 }
                 )
-
+```
+```text
         SELECTEDVALUE(Column, AlternativeResult)
 
-                example: Create new table disconnect table
-                        AgeGroups =
-                                DATATABLE(
-                                "Age Group", STRING,
-                                "Order", INTEGER,
-                                {
-                                        {"15–50", 1},
-                                        {"15–60", 2},
-                                        {"Before 40", 3},
-                                        {"Before 60", 4}
-                                }
-                                )
-                        Female Mortality =
-                                SWITCH(
-                                SELECTEDVALUE(AgeGroups[Age Group]),
+example: Create new table disconnect table
+		AgeGroups =
+				DATATABLE(
+				"Age Group", STRING,
+				"Order", INTEGER,
+				{
+						{"15–50", 1},
+						{"15–60", 2},
+						{"Before 40", 3},
+						{"Before 60", 4}
+				}
+				)
+		Female Mortality =
+				SWITCH(
+				SELECTEDVALUE(AgeGroups[Age Group]),
 
-                                "15–50", AVERAGE(mortality_rate[fma_15_50]),
-                                "15–60", AVERAGE(mortality_rate[fma_15_60]),
-                                "Before 40", AVERAGE(mortality_rate[fma_40]),
-                                "Before 60", AVERAGE(mortality_rate[fma_60])
-                                )
+				"15–50", AVERAGE(mortality_rate[fma_15_50]),
+				"15–60", AVERAGE(mortality_rate[fma_15_60]),
+				"Before 40", AVERAGE(mortality_rate[fma_40]),
+				"Before 60", AVERAGE(mortality_rate[fma_60])
+				)
+```
