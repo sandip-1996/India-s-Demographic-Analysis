@@ -207,8 +207,9 @@ SQL LEARNING POSTGRE
          SUM(*)  OUTPUT WILL BE ONE ROW. ALL ROWS COLLAPESED INTO ONE ROW. 
          SUM(COUNT(*)) OVER() OUTPUT WILL BE EVERY ROW, CALCULATE THE SUM BUT DONOT COLLAPES THE ROWS. 
 
-POWERBI - 
-1.      DAX FORMAT FOR CHANGING METRIC SYSTEM FROM MILLION BILLION TO CRORE AND LAKH FORMAT.
+## POWERBI - 
+1.  **DAX FORMAT FOR CHANGING METRIC SYSTEM FROM MILLION BILLION TO CRORE AND LAKH FORMAT.**
+```DAX
         Births in Lakhs/Crores =
         VAR CurrentValue = SUM('Table'[Column])
         RETURN
@@ -219,8 +220,8 @@ POWERBI -
                         CurrentValue >= 1000, FORMAT(CurrentValue / 1000, "0.00 K"),
                         FORMAT(CurrentValue, "#,##0") here "#,##0" is thousand seperator
         )
-
-2.      POWERBI CONCEPT: 
+```
+3.      POWERBI CONCEPT: 
         FORMAT() -> RETURN TEXT NOT NUMBER; CONVERTS STRINGS FOR DISPLAY PURPOSES. 
                 EX - FORMAT((COL1 + COL2)/2,"0.00")
 
@@ -237,7 +238,7 @@ POWERBI -
                 ADDS NEW COLUMN INTO TABLE
                 DOESNOT CHANGE WITH FILTER
 
-3.      > ADD COLUMN USING POWER QUERIES:
+4.      > ADD COLUMN USING POWER QUERIES:
         TRANSFORM DATA > ADD COLUMN > TABLE_NAME = Text.From(Number.IntegerDivide([year_],10)*10) & "_" & Text.From((Number.IntegerDivide([year_],10)*10)+10) > ok apply. 
 
         Number.IntergerDivide(col, divisor)
@@ -265,7 +266,7 @@ POWERBI -
         "Avg_MLE", CALCULATE(AVERAGE('Mortality_data'[MLE_]))
         )
 
-4.      SYNTAX - 
+5.      SYNTAX - 
         SUMMARIZE(
                 <table>,
                 <groupBy_columnName1>,
