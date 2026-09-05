@@ -1,29 +1,32 @@
 # DEMOGRAPHIC ANALYSIS – 
 ## NEW PYTHON LEARNING – 
-1. 	**FOR REMOVING ROW –**
-```text
+1. 	**FOR REMOVING ROW**
+```python
 	DATA.COLUMNS = DATA.ILOC[15]; 				                                                                
    	DATA = DATA.ILOC[16:].RESET_INDEX(DROP=TRUE)
 ```
-3. 	CHECKING DATA CONTAIN SPACE OR NOT – 
+2. 	**CHECKING DATA CONTAIN SPACE OR NOT**
+```python
 	PRINT(REPR(DATA[COLUMN1].ILOC[0] ))
-
-4. 	STORING COLUMN AS LIST WHICH CONTAIN SPACE – 
+```
+3. 	**STORING COLUMN AS LIST WHICH CONTAIN SPACE**
+```python
 	COLUMN_CONTAINED_SPACE = [COL FOR COL IN DATA.COLUMNS IF DATA[COL].ASTYPE(STR).STR.CONTAINS(R"\S+").ANY()] 
         # ANY() FUNCTION CHECK WHOLE COLUMN IF ANY ONE VALUE IS TRUE IT FLAGGED THAT COLUMN AS TRUE OTHERWISE FALSE
-
-5. 	CONVERT DATA INTO STRING AND REMOVE SPACE AND FLAGGED AS NUMERIC - 
+```
+4. 	**CONVERT DATA INTO STRING AND REMOVE SPACE AND FLAGGED AS NUMERIC**
+```python
 	FOR COLUMN IN COLUMN_CONTAINED_SPACE -  
         # DATA[COLUMN] = (DATA[COLUMN].ASTYPE(STR).STR.REPLACE(R"\S+","",REGEX=TRUE))  
         ASTYPE(STR) CONVERT THE DATA INTO STRING, REGEX = TRUE MEANS IT IS REGULAR EXPRESSION NOT PLAIN TEXT. 
         DATA[COLUMN] = PD.TO_NUMERIC(DATA[COLUMN], ERRORS = 'COERCE') # COERCE FLAGGED ANY ERROR AS NAN
-
-6.      CREATE METADATA ALOGORITM FOR MAKING ABBRIVIATIONS OF COLUMN'S NAME - 
+```
+7.      CREATE METADATA ALOGORITM FOR MAKING ABBRIVIATIONS OF COLUMN'S NAME - 
         CREATE STOP WORDS, STOP NUMBERS AND CLEANED ALL THE COLUMN ONE BY ONE,
         SPLIT INTO WORDS LIST EXCLUDING STOP_WORDS, 
         STRING CONCATINATION DONE ON FIRST LETTER OF EVERY WORDS WITH NUMBERS 
 
-7.      HOW TO CLEAN DATA BY REGULAR EXPRESSION AND BY CONVERTING NUMERIC
+8.      HOW TO CLEAN DATA BY REGULAR EXPRESSION AND BY CONVERTING NUMERIC
         SYNTAX -> is_invalid = data[data['COL'].astype(str).str.contains(r'[^0-9.]', na=False)]
         BY NUMERIC -> 
                 CHECKING THE NULL VALUES
@@ -34,7 +37,7 @@
                 data[col] = pd.to_numeric(data[col], errors='coerce')
                 data = data.dropna(subset=[col])
 
-8.      DIFFERENCE BETWEEN TUPLE AND LIST
+9.      DIFFERENCE BETWEEN TUPLE AND LIST
         TUPLE = (MIXED DATA TYPE)       |       LIST = [MIXED DATA TYPE]
         t = ([1, 2], 3)
         t[0] = [4, 5]   # ❌ TypeError (can't reassign tuple element)
@@ -47,7 +50,7 @@
         Hashable?	❌ No (can't be dict key)       ✅ Yes (if all elements hashable)
         Iteration	Slightly slower	                Slightly faster
 
-9.      columns_list = {key: key.replace(" ","_") for key in data.columns}
+10.      columns_list = {key: key.replace(" ","_") for key in data.columns}
         or 
         keys = ()
         values = ()
@@ -57,7 +60,7 @@
         values += (value,)
         column_list = dict(zip(keys, values))
 
-10.      HOW TO INVERT KEY VALUE TO VALUE KEY. 
+11.      HOW TO INVERT KEY VALUE TO VALUE KEY. 
         INV = DICT(ZIP(ORGINIAL_DICT.VALUES(), ORIGINAL_DICT.KEYS())) # it will replace identical values with latest values. to keep it another approach
         ------------
         from collections import defaultdict
@@ -66,11 +69,11 @@
                 inverted_dict[value].append(key)
         print(dict(inverted_dict))
 
-11.     SORT KEYS USING VALUES IN DICT = {KEYS STR: VALUES NUMERICAL}
+12.     SORT KEYS USING VALUES IN DICT = {KEYS STR: VALUES NUMERICAL}
         SORTED_KEYS = sorted(dict, key=dict.get, reverse = True) # reverse = True for descending order
 
 
-12.     USING GROUPBY METHOD
+13.     USING GROUPBY METHOD
         DATA.GROUPBY('Mcolumn to group by')['column to calculate'].count() # ignore NaN value, so .size() included NaN value. 
         CHECKING UNIQUE VALUES
         data.groupby('column to group by')['column to calculate'].nunique()
@@ -80,22 +83,22 @@
         data.groupby('column to group by')[['column1', 'column2']].nunique().query('column1 > 1 or column2 > 1').sort_values(['column1', 'column2'], ascending=False)
 
 
-13.     CHECKING DUPLICATE ROWS
+14.     CHECKING DUPLICATE ROWS
         DATA[DATA.DUPLICATED()]; IF EMPTY DATAFRAME NO DUPLICATE; 
         DATA[].DUPLICATED().SUM()
         DATA[].DUPLICATED(KEEP = FALSE) # keep = false; it will identify all records that are duplicate
 
-14.     arbitary inf float point for first comparisions wins. -> float('inf')
+15.     arbitary inf float point for first comparisions wins. -> float('inf')
 
-15.     if __name__ == '__main__':  it means run this code when executed directly
+16.     if __name__ == '__main__':  it means run this code when executed directly
 
-16.     data.fillna({col: "text"}, inplace = True)
+17.     data.fillna({col: "text"}, inplace = True)
 
-17.     int64 and Int64 both are different datatype. int64 this is numpy 64 bit integer type. it has no representation for NaN. Int64 is pandas nullable integer. pandas uses pd.na to represent missing values. 
+18.     int64 and Int64 both are different datatype. int64 this is numpy 64 bit integer type. it has no representation for NaN. Int64 is pandas nullable integer. pandas uses pd.na to represent missing values. 
 
-18.     str and string both are different datatype. astype('str') convert every value to string including null values. astype('string') convert string but keep null values same. 
+19.     str and string both are different datatype. astype('str') convert every value to string including null values. astype('string') convert string but keep null values same. 
 
-19.     USING REGEX PATTERNS: 
+20.     USING REGEX PATTERNS: 
                 Opening Delimiter + (Negated Class)*  + Closing Delimiter
                 Examples:
                 Text inside double quotes "...":
@@ -124,18 +127,18 @@
                 (?:...)    → group but DON'T remember it
                 (?:...)?   -> group but don't remember it optional
 
-20.     how to make dataframe: 
+21.     how to make dataframe: 
         dict = {'key1': value, 'key2': value}
         df = pd.DataFrame(dict)
 
-21.     result = grouped['TEST CODE'].agg('+'.join)
+22.     result = grouped['TEST CODE'].agg('+'.join)
                 > ["REFE", "REFT", "SFCM"]
                 > "REFE+REFT+SFCM"
-22.     (data1.columns.str.replace('\xa0', ' ', regex=False).str.strip()) replace this special space
+23.     (data1.columns.str.replace('\xa0', ' ', regex=False).str.strip()) replace this special space
 
-23.     date_check = pd.to_datetime(data1["DUE DATE"], dayfirst=True, errors="coerce"); date_check.isna().sum()
+24.     date_check = pd.to_datetime(data1["DUE DATE"], dayfirst=True, errors="coerce"); date_check.isna().sum()
 
-24.     folder = Path(path, "files")
+25.     folder = Path(path, "files")
         files = list(folder.glob('*.csv'))
         upload more than 1 number of files. 
         for file in files:
